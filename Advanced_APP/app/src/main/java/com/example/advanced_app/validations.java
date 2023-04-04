@@ -2,18 +2,24 @@ package com.example.advanced_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.regex.Pattern;
+
 public class validations extends AppCompatActivity
 {
 
-    private EditText name_et,job_et,gmail_et,password_et;
+    private EditText name_et,job_et,email_et,password_et;
     private Button proceed_btn,cancel_btn;
     boolean is_all_fields_checked = false;
+    String email_pattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -23,7 +29,7 @@ public class validations extends AppCompatActivity
 
         name_et = findViewById(R.id.name);
         job_et = findViewById(R.id.job);
-        gmail_et = findViewById(R.id.gmail);
+        email_et = findViewById(R.id.email);
         password_et = findViewById(R.id.password);
         proceed_btn = findViewById(R.id.btn_proceed);
         cancel_btn = findViewById(R.id.btn_cancel);
@@ -66,9 +72,14 @@ public class validations extends AppCompatActivity
             job_et.setError("Job is required");
             return false;
         }
-        if (gmail_et.length() == 0)
+        if (email_et.length() == 0)
         {
-            gmail_et.setError("Gmail is required");
+            email_et.setError("Email is required");
+            return false;
+        }
+        else if (!email_et.getText().toString().trim().matches(email_pattern))
+        {
+            email_et.setError("Email should be valid");
             return false;
         }
         if (password_et.length() == 0)
