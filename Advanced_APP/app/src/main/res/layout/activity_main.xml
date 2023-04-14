@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:text="OPTIONS"
         android:textSize="20dp"
+        android:textColor="@color/black"
         android:layout_marginTop="30dp"/>
 
     </LinearLayout>
@@ -27,6 +28,33 @@
         android:id="@+id/validation_btn"
         android:text="VALIDATIONS"
         android:textSize="15dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="#13b3ed"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/web_api_btn"
+        android:text="WEB API"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="#13b3ed"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/q_r_code_btn"
+        android:text="Q R CODE"
+        android:textSize="15dp"
+        android:textColor="@color/black"
         android:layout_marginTop="45dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
