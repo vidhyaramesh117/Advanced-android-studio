@@ -10,7 +10,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity
 {
 
-    private Button validation,web_api,q_r_code;
+    private Button validation,web_api,q_r_code,notification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity
         validation = findViewById(R.id.validation_btn);
         web_api = findViewById(R.id.web_api_btn);
         q_r_code = findViewById(R.id.q_r_code_btn);
+        notification = findViewById(R.id.notification_btn);
 
         validation.setOnClickListener(new View.OnClickListener()
         {
@@ -48,6 +49,16 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view)
             {
                 Intent intent = new Intent(getApplicationContext(),q_r_code.class);
+                startActivity(intent);
+            }
+        });
+
+        notification.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(getApplicationContext(),notification.class);
                 startActivity(intent);
             }
         });

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <!-- Permission for camera -->
-    <uses-permission android:name="android.permission.CAMERA" /> <!-- Permission to vibrate -->
+
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -16,11 +17,25 @@
         android:theme="@style/Theme.Advanced_APP"
         tools:targetApi="31">
         <activity
+            android:name=".notification_display"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".notification"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".q_r_code"
             android:exported="false"
             android:screenOrientation="portrait"
-            tools:replace="android:screenOrientation"
-            android:stateNotNeeded="true" >
+            android:stateNotNeeded="true"
+            tools:replace="android:screenOrientation">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
